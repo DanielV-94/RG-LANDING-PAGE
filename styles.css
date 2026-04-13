@@ -524,6 +524,7 @@ body {
 }
 
 @media (max-width: 960px) {
+  /* Cursor — se desactiva en touch */
   body {
     cursor: auto;
   }
@@ -533,31 +534,20 @@ body {
     display: none;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    margin-top: 1.2rem;
-  }
-
-  .hero-showcase {
-    max-height: 460px;
-  }
-
-  .services-grid,
-  .value-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* Header — hamburguesa */
   .site-header {
     border-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 0.4rem 0.75rem;
     align-items: center;
+    /* Asegura que no quede pegado al borde en safe-area */
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
 
   .menu-toggle {
-    display: block;
+    display: grid;
   }
 
   .site-header nav {
@@ -580,5 +570,197 @@ body {
 
   .site-header nav a {
     padding: 0.48rem 0.3rem;
+  }
+
+  /* Hero — una columna */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin-top: 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .hero-showcase {
+    max-height: 420px;
+    width: 100%;
+  }
+
+  /* Servicios — una columna */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 280px;
+  }
+
+  /* Valor diferencial — una columna */
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Secciones — menos margen superior */
+  .section {
+    margin-top: 3.5rem;
+  }
+}
+
+/* ---- Tablet landscape / pantallas medianas ---- */
+@media (min-width: 600px) and (max-width: 960px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-card {
+    min-height: 260px;
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    gap: 2rem;
+  }
+
+  .hero-showcase {
+    max-height: 380px;
+  }
+}
+
+/* ---- Mobile puro (≤ 480px) ---- */
+@media (max-width: 480px) {
+  :root {
+    --radius: 0.9rem;
+  }
+
+  .site-header {
+    top: 0.5rem;
+    padding: 0.55rem 0.85rem;
+    padding-left: max(0.85rem, env(safe-area-inset-left));
+    padding-right: max(0.85rem, env(safe-area-inset-right));
+  }
+
+  .brand img {
+    width: 88px;
+  }
+
+  .hero {
+    margin-top: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.65rem, 8vw, 2.4rem);
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+
+  .hero-showcase {
+    max-height: 240px;
+  }
+
+  .section {
+    margin-top: 2.8rem;
+  }
+
+  .section h2 {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+  }
+
+  .service-card {
+    min-height: 220px;
+  }
+
+  .card-content h3 {
+    font-size: 1.05rem;
+  }
+
+  .card-content p {
+    font-size: 0.87rem;
+  }
+
+  .value-item {
+    padding: 1rem;
+  }
+
+  .cta-content {
+    padding: 1.8rem 0.75rem;
+  }
+
+  .cta-logo {
+    width: 90px;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+  }
+
+  .payment-tags {
+    gap: 0.4rem;
+  }
+
+  .payment-tags span {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* Lightbox en móvil — padding reducido y sin border-radius exagerado */
+  .lightbox {
+    padding: 0.5rem;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+
+  .lightbox-inner img {
+    max-height: 70vh;
+    border-radius: 0.7rem;
+  }
+
+  .lightbox-close {
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-caption {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
+
+  .site-footer {
+    padding: 1.4rem 1rem max(1.8rem, env(safe-area-inset-bottom));
+    font-size: 0.82rem;
+  }
+}
+
+/* ---- Pantallas muy grandes (≥ 1400px) — evitar que el hero quede vacío ---- */
+@media (min-width: 1400px) {
+  .hero {
+    min-height: 75vh;
+  }
+
+  .orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orb-2 {
+    width: 360px;
+    height: 360px;
   }
 }
