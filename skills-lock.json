@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "animation-designer": {
+      "source": "daffy0208/ai-dev-standards",
+      "sourceType": "github",
+      "computedHash": "8d67411378f8609415a2ea727013490c8432bfd941ae3f4a343b8bf4d874ec81"
+    },
+    "awwwards-ui-skills": {
+      "source": "ihlamury/design-skills",
+      "sourceType": "github",
+      "computedHash": "10e497f6aa44ed7907ab69acfcd03ba386bf147d07f9982616282d67a0bd4c7c"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
+    },
+    "gsap-awwwards-website": {
+      "source": "eng0ai/eng0-template-skills",
+      "sourceType": "github",
+      "computedHash": "643ca04b17786edb2467e36bef608d156ca1bf5f8b5c5e712cc57987c6bdc60e"
+    },
+    "image-generation": {
+      "source": "sanky369/vibe-building-skills",
+      "sourceType": "github",
+      "computedHash": "01c178c88b5085f4c16a3878c8b60dd961647ccb0c29b6ae9f2403c90132c43c"
+    },
+    "ui-animation": {
+      "source": "mblode/agent-skills",
+      "sourceType": "github",
+      "computedHash": "f918842977d31fadccb206bd80163091b57294690cbb7351e91cf9c681de2310"
+    }
+  }
+}
